@@ -2,6 +2,8 @@ import torch
 from torch_geometric.data import Data
 import networkx as nx
 from torch_geometric.utils.convert import to_networkx
+import matplotlib.pyplot as plt
+%matplotlib inline
 
 " Define a graph "
 
@@ -59,3 +61,5 @@ print("Number of weights per edge (edge-features): ", data.num_edge_features, "\
 
 G = to_networkx(data)
 nx.draw_networkx(G)
+plt.savefig('/home/gauravs/github/gnn_udemy/graph.png', dpi=300, bbox_inches='tight')
+plt.show()
