@@ -3,7 +3,6 @@ from torch_geometric.data import Data
 import networkx as nx
 from torch_geometric.utils.convert import to_networkx
 import matplotlib.pyplot as plt
-%matplotlib inline
 
 " Define a graph "
 
