@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 
 # a graph with 4 nodes
 edge_list = torch.tensor([
-                         [0, 0, 0, 1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 6], # Source Nodes
-                         [1, 2, 3, 0, 0, 3, 2, 0, 4, 3, 5, 4, 6, 5]  # Target Nodes
+                         [0, 0, 0, 1, 2, 2, 3, 3], # Source Nodes
+                         [1, 2, 3, 0, 0, 3, 2, 0]  # Target Nodes
                         ], dtype=torch.long)
 
 # 6 Features for each node (4x6 - Number of nodes x NUmber of features)
@@ -19,12 +19,9 @@ node_features = torch.tensor([
                             [-1, 0, 2, -3, 0, 1], # Features of Node 1
                             [1, -1, 0, -1, 2, 1], # Features of Node 2
                             [0, 1, 4, -2, 3, 4], # Features of Node 3
-                            [0, 1, 4, -2, 3, 4], # Features of Node 4
-                            [0, 1, 4, -2, 3, 4], # Features of Node 5
-                            [0, 1, 4, -2, 3, 4], # Features of Node 6
                             ],dtype=torch.long)
 
-# 1 Weight for each edge:  (node x 1)
+# 1 Weight for each edge:  (edge x 1)
 
 edge_weight = torch.tensor([
                             [35.], # Weight for nodes (0,1)
@@ -35,12 +32,6 @@ edge_weight = torch.tensor([
                             [5.], # Weight for nodes (2,3)
                             [15.], # Weight for nodes (3,2)
                             [8.], # Weight for nodes (3,0)
-                            [8.], # Weight for nodes (3,4)
-                            [8.], # Weight for nodes (4,3)
-                            [8.], # Weight for nodes (4,5)
-                            [8.], # Weight for nodes (5,4)
-                            [8.], # Weight for nodes (5,6)
-                            [8.], # Weight for nodes (6,5)
                             ],dtype=torch.long)
 
 # Make a data object to store graph informaiton
